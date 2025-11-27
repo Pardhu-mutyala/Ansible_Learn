@@ -1,0 +1,29 @@
+Remote login from one linux server to other
+ssh <username>@<ip_address>
+Login and perform some operations
+ssh <username>@<ip_address> 'exho "hello-ansible" > /tmp/ans.txt'
+
+Ansible have the capability to login multiple servers at a time.
+
+Ansible uses SSH approach to connect the nodes
+
+The server which having ansible is called Ansible server
+
+from that server we can connect with other servers.
+
+Installing Ansible:
+CMD: sudo dnf install ansible -y
+
+note: Ansible is a python dependency Application.
+
+Connecting to other server by using ansible
+
+CMD: ansible all -i <ip_address> -e ansible_user=<username> -e ansible_password=<password> -m ping
+
+Similarly for Installing an application or service
+
+CMD: ansible all -i <ip_address> -e ansible_user=<username> -e ansible_password=<password> -b -m dnf -a "name=nginx state=installed"
+
+Shell Scripting == ansible playbook
+
+Ansible playbooks are written in YAML files.
