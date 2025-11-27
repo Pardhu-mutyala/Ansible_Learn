@@ -1,0 +1,5 @@
+- name: ping the server
+  hosts: web  # we can provide which group of servers we want to execute the task 
+  tasks: #list of tasks
+  - name: ping the server
+    ping:  ansible.builtin.ping  # module name

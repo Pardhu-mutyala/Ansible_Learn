@@ -27,3 +27,7 @@ CMD: ansible all -i <ip_address> -e ansible_user=<username> -e ansible_password=
 Shell Scripting == ansible playbook
 
 Ansible playbooks are written in YAML files.
+
+To perfrom a task by using Ansible playbooks
+
+CMD: ansible-playbook -i inventory.ini -e ansible_user=<username> -e ansible_password=<password> <playbook.yaml file>
