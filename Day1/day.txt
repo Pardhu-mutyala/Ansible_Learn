@@ -31,3 +31,10 @@ Ansible playbooks are written in YAML files.
 To perfrom a task by using Ansible playbooks
 
 CMD: ansible-playbook -i inventory.ini -e ansible_user=<username> -e ansible_password=<password> <playbook.yaml file>
+
+What are Ansible adhoc commands?
+
+It is ansible comaand line to perform one time task or emergency tasks when we don't have time to write a playbook.
+
+What are playbook?
+Playbook conatins list of plays we can execute again of remote servers to perform multiple tasks. These can be written in yaml format.

@@ -1,0 +1,20 @@
+- name: play level vars
+  hosts: local
+  connection: local
+  vars: 
+    course: DevOps with AWS
+    duration: 100 hrs
+    source: Udemy or Utube
+  tasks:
+  - name: Print play level vars
+    vars:
+      course: Ansible
+    ansible.builtin.debug:
+    # vars refernce should be in double curly braces
+      msg: "Hi Course: {{ course }}, Duration: {{ duration }}, Source: {{ source }}"
+  - name: Print play level vars
+    #vars:
+      #course: Ansible
+    ansible.builtin.debug:
+    # vars refernce should be in double curly braces
+      msg: "Hi Course: {{ course }}, Duration: {{ duration }}, Source: {{ source }}"
