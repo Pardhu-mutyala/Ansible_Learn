@@ -10,3 +10,7 @@
     ansible.builtin.debug:
     # vars refernce should be in double curly braces
       msg: "Hi Course: {{ course }}, Duration: {{ duration }}, Source: {{ source }}"
+  - name: Print play level vars
+    ansible.builtin.debug:
+    # vars refernce should be in double curly braces
+      msg: "Hi Course: {{ course }}, Duration: {{ duration }}, Source: {{ source }}"
