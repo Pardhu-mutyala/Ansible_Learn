@@ -1,0 +1,14 @@
+- name: Conditions in yaml
+  hosts: local
+  connection: local
+  vars: 
+    NUMBER: 78
+  tasks:
+  - name: print if number us lessthan or equal to 100
+    ansible.builtin.debug:
+      msg: "Given number us  {{ NUMBER }}, lessthan or eual to 100"
+    when: NUMBER < 100
+  - name: print if number us greater than or equal to 100
+    ansible.builtin.debug:
+      msg: "Given number us  {{ NUMBER }}, greater than or eual to 100"
+    when: NUMBER > 100
