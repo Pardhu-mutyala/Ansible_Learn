@@ -55,3 +55,17 @@ DATA TYPES:-
 Facts are nothing but variables
 Packages
 1.Gather facts about the server
+2. If os_familiy is red hat it will run dnf state name -y
+3. If oc_family is Debian it will run apt state name -y
+
+Functions == filters
+Ansible functions are knows as filters in Documents
+
+Piping 
+
+CMD1 | CMD2
+
+CMD1 o/p can be taken as input to CMD2
+
+Ansible we can't create the function directly, we need to create these by using python
+

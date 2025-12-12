@@ -1,0 +1,17 @@
+- name: playbook control using ansible faxts
+  hosts: web
+  become: yes
+  tasks: 
+  - name: Install nginx if redhat
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
+    when: ansible_os_family == "Redhat"
+
+
+  - name: Install nginx if redhat
+    ansible.builtin.apt:
+      name: nginx
+      state: present
+    when: ansible_os_family == "Debian"
+

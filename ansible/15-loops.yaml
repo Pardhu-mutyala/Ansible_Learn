@@ -1,0 +1,23 @@
+- name: Install Packages
+  hosts: web
+  become: yes
+  tasks:
+  - name: install packages
+    ansible.builtin.package:
+    name: {{ item }}
+    state: installed
+  loop: 
+  - nginx
+  - mysql
+  - zip
+
+  
+# if we want install certain application want to skip other
+  - name: install packages
+    ansible.builtin.package:
+      name: "{{ item.name }}""
+      state: "{{ item.state }}"
+    loop:
+      - { name: 'nginx', state: 'present'}
+      - { name: 'mysql', state: 'absent'}
+      - { name: 'zip', state: 'absent'}
