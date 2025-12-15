@@ -1,7 +1,32 @@
 - name: functions
   hosts: local
   connections: local
+
+  vars:
+    persons: "RAmes, Suresh,Josh"
   tasks:
   - name: check undefined vars
     ansible.builtin.debug:
-      msg: "Hello, {{ person }}"
+      msg: "Hello, {{ person  | defult ('Ramesh') }}"
+
+  - name: print names a slist
+    ansible.builtin.debug:
+      msg: "Hello {{ persons | sploit (',')}}"
+  - name: convert map into list
+    vars: 
+      course:
+        name: ansible
+        duration: 10HR
+        trainer: sivakumar
+    ansible.builtin.debug:
+      msg: "course info: {{ course| dict2items }}"\
+  
+
+  - name: convert list into  map
+    vars: 
+      course:
+      - {'key': 'name', 'value': 'ansible'}
+      - {'key': 'duration', 'value': '10HR'}
+      - {'key': 'trainer', 'value': 'siv'}
+    ansible.builtin.debug:
+      msg: "course info: {{ course| dict2items }}"

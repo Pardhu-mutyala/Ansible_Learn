@@ -1,0 +1,21 @@
+- name: SHell vs Command
+  hosts: web
+  tasks: 
+  - name: redirect ls output to a file using SHELL
+    #ansible.builtin.command: "ls -ltr > /tmp/output.txt"
+    ansible.builtin.shell: "ls -ltr > /tmp/output.txt"
+    register: command_result
+
+  - name: print the  outcome
+    ansible.builtin.debuf:
+      msg: {{ command_result }}
+
+  - name: redirect ls output to a file using CMD
+    ansible.builtin.command: "ls -ltr "
+    #ansible.builtin.shell: "ls -ltr > /tmp/output.txt"
+    register: command_o/p
+
+  - name: print the  o/p
+    ansible.builtin.debuf:
+      msg: {{ command_o/p }}
+

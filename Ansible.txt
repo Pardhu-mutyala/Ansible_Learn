@@ -69,3 +69,28 @@ CMD1 o/p can be taken as input to CMD2
 
 Ansible we can't create the function directly, we need to create these by using python
 
+Functions: 
+Default -->If you have't provide any info about the Vars, by using default we can use that VAR.
+
+RAMESH, SURESH, RAHEEM, DARLING  --> by def it is takesn as STRING.
+
+if you eant print like a list you can use --> delimiting
+the above String of names printed an
+RAMESH
+SURESH
+RAHEEM
+DARLING
+
+If there are no modules available
+1. Develop your modules
+2. use shell or command module
+
+Shell vs Command
+
+Shell module --> If you are using shell module, your are logging inside the server and running the tasks. Here redirections, variables, pipes ,etc will work here.
+
+Command module --> Executing the commands from outside. you will get linux full environment. redirectios, piping and vars will not work here.
+
+** Always try yo use Command modul, it reqquire some redirections or piping go for "SHELL" module.
+
+
